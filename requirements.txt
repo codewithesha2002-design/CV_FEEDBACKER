@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+nltk
+joblib
+jupyter
+fastapi
+uvicorn
+streamlit
+python-multipart
+pdfplumber
+python-docx
+mysql-connector-python

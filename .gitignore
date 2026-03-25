@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+data/uploads/*
+!data/uploads/.gitkeep
+models/*.pkl
+!models/resume_classifier.pkl
+!models/tfidf.pkl
