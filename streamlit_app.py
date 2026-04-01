@@ -137,10 +137,12 @@ def _load_sentence_transformer():
 def load_assets():
     classifier = joblib.load(CLASSIFIER_PATH)
     vectorizer = joblib.load(TFIDF_PATH)
-    try:
-        match_model = joblib.load(MATCH_MODEL_PATH)
-    except ModuleNotFoundError:
-        match_model = None
+    match_model = None
+    if MATCH_MODEL_PATH.exists():
+        try:
+            match_model = joblib.load(MATCH_MODEL_PATH)
+        except ModuleNotFoundError:
+            match_model = None
     sbert_model = _load_sentence_transformer()
     return classifier, vectorizer, match_model, sbert_model
 
@@ -412,7 +414,7 @@ def validate_paths(paths: Iterable[Path]) -> None:
 
 def main() -> None:
     inject_styles()
-    validate_paths([DATA_PATH, CLASSIFIER_PATH, TFIDF_PATH, MATCH_MODEL_PATH])
+    validate_paths([DATA_PATH, CLASSIFIER_PATH, TFIDF_PATH])
 
     st.markdown(
         """

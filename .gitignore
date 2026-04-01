@@ -10,3 +10,5 @@ data/uploads/*
 models/*.pkl
 !models/resume_classifier.pkl
 !models/tfidf.pkl
+!models/xgb_resume_model.pkl
+!models/sbert_model.pkl
